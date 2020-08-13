@@ -1,0 +1,81 @@
+@import "reset.css";
+@import "skeleton.css";
+@import "font-awesome.css";
+@import "superfish.css";
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:600);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:700);
+
+
+html {
+	width: 100%;
+
+}
+a[href^="tel:"] {
+ color: inherit;
+ text-decoration: none;
+}
+
+* {
+	-webkit-text-size-adjust: none;
+}
+
+body {
+	position: relative;
+	min-width: 1050px;
+    background: url(../images/jobbac.jpg) 0 0 repeat #f9f9f6;
+    color: #4c4c4c;
+    font: 14px/20px Arial, Helvetica, sans-serif;
+}
+
+.ic {
+	border:0;
+	float:right;
+	background:#fff;
+	color:#f00;
+	width:50%;
+	line-height:10px;
+	font-size:10px;
+	margin:-220% 0 0 0;
+	overflow:hidden;
+	padding:0
+}
+
+p {
+    margin-bottom: 20px
+
+p {
+    margin-bottom: 20px;
+    height: 153px;
+}
+
+
+}
+
+p.p2 {
+    margin-bottom: 34px;
+}
+
+
+	strong {
+		font-weight: 700;
+	}
+
+address {
+	font-style: normal;
+}
+
+
+
+input {
+	border-radius:
+
+
+
+input {
+	border-radius: 0 !important;
+    height: 26px;;;;;;;;;;;;;;;;;;;;
+    height: 26px;;
+    

@@ -1,0 +1,377 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/normalize.min.css" rel="stylesheet" />
+    <link href="css/style.lite.css" rel="stylesheet" />
+    <link href="css/style.lite.min.css" rel="stylesheet" />
+    <script src="js/custom-script.js"></script>
+    <script src="js/custom-script.min.js"></script>
+    <script src="js/freewall.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.cycle2.min.js"></script>
+    <script src="js/jquery.slimmenu.min.js"></script>
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="parent">
+    <form id="form1" runat="server">
+    <div>
+        
+
+
+    <!-- All content (menu, main-entry, and footer) goes inside this container. -->
+    <div class="main-container">
+
+        <!-- Logo and menu inside this container. -->
+        <div class="header">
+            <div class="clearfix">
+
+                <!-- Put your site logo here. Recommended size is 165px x 50px. -->
+                <div class="float-left logo">
+                    <h1>
+                        <a href="#">
+                            <img src="Admin/images/aa.jpg" alt="" style="height: 44px; width: 219px" />
+                        </a>
+                    </h1>
+                </div>
+
+                <!-- Top Menu Bar -->
+                <div class="float-right">
+                    <ul id="top-nav" class="slimmenu">
+
+                        <!-- To create menu, type these...
+                             <li>
+                                 <a href="URL" target="open-iframe">Your Menu Item</a>
+                             </li>
+
+                             Note:
+                             There's a fullscreen function in this template. To prevent fullscreen (if enabled) from exiting when user clicked a link,
+                             put the linked web page into an iframe by using ... target="open-iframe" ...
+
+                             The same goes for main-entry.
+                        -->
+                        <li>
+                            <a href="" >Home</a>
+                        </li>
+                        <li>
+                            <a href="Login.aspx" >Login</a>
+                        </li>
+                        <li>
+                            <a href="userform.aspx" >Registration</a>
+                        </li>
+                        <li>
+                            <a href="feedbackform.aspx">Feedback</a>
+                        </li>
+
+                        <!-- This is the filter menu, to filter and display your works based on class name (usually named after a category) in main-entry.
+                             To create filter, type these...
+                             <a href="#" class="filter-label" data-filter=".cat-1"> (change .cat-1 accordingly)
+                        -->
+                        <li>
+                             <ul>
+                                <li>
+                                    <a href="#" class="filter-label active">All Category</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="filter-label" data-filter=".cat-1">Filter Category 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="filter-label" data-filter=".cat-2">Filter Category 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="filter-label" data-filter=".cat-3">Filter Category 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Follow Us On</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="#">Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pinterest</a>
+                                </li>
+                                <li>
+                                    <a href="#">Instagram</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="fullscreen tooltip" title="Go Full Screen">
+                                <span class="pictogram">&#xe801;</span>
+                            </a>
+                            <a href="#" class="fullscreenExit tooltip" title="Exit Full Screen">
+                                <span class="pictogram">&#xe802;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Main Entry. 
+             All posts thumbnails and sliders go inside .main-entry div. All of them are grid based named sizeXX (XX represents number of column and row)
+
+                size11 = 1 column x 1 row 
+                size12 = 1 column x 2 rows
+                size21 = 2 columns x 1 row
+                size32 = 3 columns x 2 rows (I use this for inner page to show video or slideshow)
+
+             The basic code are these...
+
+                <div class="brick tint size12 cat-1 cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-fixpos="0-0">
+
+                    // Your image
+                    <img src="URL_to_image" alt="image text alternative" />
+
+                    <div class="overlay">
+                        <h3 class="project-title">Your Project Title</h3>
+                        <p class="project-description">Your project description</p>
+                        <a href="URL" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                    </div>
+
+                </div>
+
+             Legend:
+             * Class:
+                    brick = The grid. Must be included.
+                    tint = To lighten the image. FYI, tint won't work on slideshow images. Optional.
+                    size12 = Size of the grid. You can change this to size11, size21, or size32. Must be included.
+                    cat-1 = For filter. Optional.
+                    cycle-slideshow = To display slideshow. Optional.
+             
+             * data-cycle-fx = Slideshow effect. 
+             * data-cycle-speed = Slideshow speed.
+             // For more information, visit http://jquery.malsup.com/cycle2/api/
+
+             * data-fixpos = To fixed position grid
+             // For more information, visit http://www.vnjs.net/www/project/freewall/
+
+
+             You can vary them all you want. See examples below for better understanding.
+        -->
+        <div id="freewall" class="free-wall">
+
+            <div class="brick tint size11 cat-2">
+                <img src="images/a1.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">php Project</h3>
+                    <p class="project-description"></p>
+                    <a href="php.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size11 cat-3">
+                <img src="images/a2.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">.net Project</h3>
+                    <p class="project-description"></p>
+                    <a href="net.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size11 cat-2">
+                <img src="images/a3.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">android Project</h3>
+                    <p class="project-description"></p>
+                    <a href="android.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+
+            <!-- This is the slideshow for images -->
+            <div class="brick size12 cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-speed="500" data-fixpos="0-3">
+                <!-- Your slideshow images -->
+                <img src="images/a11.jpg" alt="" />
+                <img src="images/a10.jpg" alt="" />
+                <img src="images/a12.jpg" alt="" />
+            </div>
+
+            <div class="brick size11" data-fixpos="1-0">
+                <!-- For text only, put your heading/paragraph inside div .cover -->
+                <div class="cover">
+                
+                    <marquee behavior ="alternate">
+                        <h1>
+                            <u>
+                                <b>
+                                    <br />
+                                    <br />
+                                   
+                                    WELCOME  TO <br />
+                                    <br />
+                                    <br />
+                                    PROJECT HUB
+                                </b>
+                            </u>
+                        </h1></marquee>
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                                     
+                    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                                    </div>
+            </div>
+            <div class="brick tint size12 cat-3">
+                <img src="images/a4.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">java Project </h3>
+                    <p class="project-description"></p>
+                    <a href="java.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick size11 cycle-slideshow client-number" data-cycle-fx="scrollHorz" data-cycle-speed="200" data-fixpos="1-2">
+                <img src="images/3346647884_a47c71fd9a_o.jpg" alt="" />
+                <img src="images/1452336320_483f721d3d_o.jpg" alt="" />
+                <img src="images/4538256461_96f9e70e9c_b.jpg" alt="" />
+                <img src="images/2310704408_361758fa28_b.jpg" alt="" />
+                <div class="client">
+                    <div class="number">1000+</div>
+                    <div class="client-text">Clients and Counting</div>
+                    <div class="client-text">
+                        <a href="#">
+                            <strong>BE ONE!</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="brick tint size11 cat-1">
+                <img src="images/a6.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">PERL Project</h3>
+                    <p class="project-description"></p>
+                    <a href="perl.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            
+            <!-- This is the slideshow for text. Wrap your text inside div .cover -->
+            <div class="brick size11 cycle-slideshow" data-cycle-fx="fade" data-cycle-speed="900" data-cycle-slides="> div" data-fixpos="2-2">
+                <div class="cover">
+                    <h2>If you are looking to acquire a project for your study or commercial purposes  Project Hub is a website, you will need to register for buy or sell projects in this website.
+</h2>
+                    
+                </div>
+                <div class="cover">
+                    <h2>Just give us the details of your project and we will get it done faster, better, and cheaper than you can imagine. 
+
+
+Always know what's going on with your project, what is getting done and what still needs doing.</h2>
+                   
+                </div>
+                <div class="cover">
+                    <h2>Project Hub is the marketplace, where you can discover new projects. We are the world’s one of the best destination for buying and selling IT projects.</h2>
+                    
+                </div>
+            </div>
+            
+            <div class="brick tint size11 cat-2">
+                <img src="images/a9.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">C/C++ Project</h3>
+                    <p class="project-description"></p>
+                    <a href="c.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size11 cat-1">
+                <img src="images/a7.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">COBOL Project</h3>
+                    <p class="project-description"></p>
+                    <a href="cobol.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size21 cat-3">
+                <img src="images/a5.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">PHYTHON Project</h3>
+                    <p class="project-description"></p>
+                    <a href="python.aspx" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+            <div class="brick tint size11 cat-1">
+                <img src="images/a8.jpg" alt="" />
+                <div class="overlay">
+                    <h3 class="project-title">other Project</h3>
+                    <p class="project-description"></p>
+                    <a href="single-page-lite2.html" class="open-project" target="open-iframe">OPEN <span class="pictogram">&#xe803;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="float-right copyright">
+                <p>&copy;2016
+                    <strong>Project Hub</strong>. All rights reserved.  <!-- Consider a donation via PayPal for me at leoariwibowo@gmail.com, if you want to remove this link -->
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- All links from this homepage will be opened in this iframe, to prevent fullscreen (if enabled) from exiting if the user clicked on a link. -->
+    <iframe id="open-iframe" name="open-iframe"></iframe>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/freewall.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
+    <script type="text/javascript" src="js/custom-script.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </form>
+</body>
+</html>

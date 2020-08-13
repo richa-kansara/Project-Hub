@@ -1,0 +1,269 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css2/owl.carousel.css">
+		<link rel="stylesheet" href="css2/slider.css">
+		<link rel="stylesheet" href="css2/style.css">
+		<script src="js2/jquery.js"></script>
+		<script src="js2/jquery-migrate-1.1.1.js"></script>
+		<script src="js2/script.js"></script>
+		<script src="js2/jquery.ui.totop.js"></script>
+		<script src="js2/superfish.js"></script>
+		<script src="js2/jquery.equalheights.js"></script>
+		<script src="js2/jquery.mobilemenu.js"></script>
+		<script src="js2/jquery.easing.1.3.js"></script>
+		<script src="js2/owl.carousel.js"></script>
+		<script src="js2/jquery.flexslider-min.js"></script>
+		<script src="js2/kwiks.js"></script>
+		<script>
+		    $(document).ready(function () {
+		        $().UItoTop({ easingType: 'easeOutQuart' });
+		        var owl = $("#owl");
+		        owl.owlCarousel({
+		            items: 4, //10 items above 1000px browser width
+		            itemsDesktop: [995, 3], //5 items between 1000px and 901px
+		            itemsDesktopSmall: [767, 2], // betweem 900px and 601px
+		            itemsTablet: [700, 2], //2 items between 600 and 0
+		            itemsMobile: [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+		            navigation: true,
+		        });
+		    })
+		    var Main = Main || {};
+		    jQuery(window).load(function () {
+		        window.responsiveFlag = jQuery('#responsiveFlag').css('display');
+		        Main.gallery = new Gallery();
+		        jQuery(window).resize(function () {
+		            Main.gallery.update();
+		        });
+		    });
+		    function Gallery() {
+		        var self = this,
+					container = jQuery('.flexslider'),
+					clone = container.clone(false);
+		        this.init = function () {
+		            if (responsiveFlag == 'block') {
+		                var slides = container.find('.slides');
+		                slides.kwicks({
+		                    max: 500,
+		                    spacing: 0
+		                }).find('li > a').click(function () {
+		                    return false;
+		                });
+		            } else {
+		                container.flexslider();
+		            }
+		        }
+		        this.update = function () {
+		            var currentState = jQuery('#responsiveFlag').css('display');
+		            if (responsiveFlag != currentState) {
+		                responsiveFlag = currentState;
+		                container.replaceWith(clone);
+		                container = clone;
+		                clone = container.clone(false);
+		                this.init();
+		            }
+		        }
+		        this.init();
+		    }
+		</script>
+		<!--[if lt IE 8]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+			</a>
+		</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="page1" id="top">
+
+    <header>
+			<div class="clear"></div>
+			<div class="container_12">
+				<div class="grid_12">
+					<h1>
+						<a href="index.html">
+							<img src="images/logo.png" alt="Your Happy Family">
+						</a>
+					</h1>
+					<div class="menu_block">
+						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+							<ul class="sf-menu">
+								<li class="current"><a href="index.html">Home</a>
+									<ul>
+										<li><a href="#">history</a></li>
+										<li><a href="#">offers</a></li>
+										<li><a href="#">news</a>
+										<ul>
+											<li><a href="#">fresh </a></li>
+											<li><a href="#">archive</a></li>
+										</ul>
+									</ul>
+								</li>
+								<li><a href="cityform.aspx">City Info</a></li>
+								<li><a href="StateForm.aspx">State Info</a></li>
+								<li><a href="categoryform.aspx">Category Info </a></li>
+								<li><a href="question.aspx">Question Info</a></li>
+                                <li><a href="../Logout.aspx">Logout</a></li>
+
+							</ul>
+						</nav>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+<!--==============================Content=================================-->
+			<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - December 16, 2013!</div>
+				<div class="container_12">
+					<div class="grid_8">
+						<div class="flexslider">
+							<ul class="slides">
+								<li>
+									<img src="images/s1.jpg" alt="">
+									<div class="flex-caption">
+										<p>Software</p>
+									</div>
+								</li>
+								<li>
+									<img src="images/page1_img2.jpg" alt="">
+									<div class="flex-caption c2">
+										<p>Save</p>
+									</div>
+								</li>
+								<li>
+									<img src="images/page1_img3.jpg" alt="">
+									<div class="flex-caption">
+										<p>Help</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<span id="responsiveFlag"></span>
+					</div>
+
+					<div class="grid_4">
+	
+                             <br />
+                            <br />If you are looking to acquire a project for your study or commercial purposes  Project Hub is a website, you will need to register for buy or sell projects in this website.
+ </div><br />
+						<p>
+                           
+						
+						Just give us the details of your project and we will get it done faster, better, and cheaper than you can imagine. 
+
+
+Always know what's going on with your project, what is getting done and what still needs doing.
+
+</p>
+
+Project Hub is the marketplace, where you can discover new projects. We are the world’s one of the best destination for buying and selling IT projects.
+
+
+Buyers love Project Hub because there are more projects for sale than anywhere else;
+
+					<div class="clear"></div>
+                    
+					<div class="grid_12">
+					<br />	
+						<br />
+                        <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+					</div>
+					<div class="clear"></div>
+					<div class="grid_12">
+						<h2>You can help Them</h2>
+						<div id="owl">
+							<div class="item">
+								<a href="#"><img src="images/page1_img4.jpg" alt="">Jim <br>
+								8 years</a>
+							</div>
+							<div class="item it1">
+								<a href="#"><img src="images/page1_img5.jpg" alt="">Ann <br>
+								3 years</a>
+							</div>
+							<div class="item it2">
+								<a href="#"><img src="images/page1_img6.jpg" alt="">Linda <br>
+								5 years</a>
+							</div>
+							<div class="item it3">
+								<a href="#"><img src="images/page1_img7.jpg" alt="">Mark  <br>
+								6 years</a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="images/page1_img4.jpg" alt="">Jim <br>
+								8 years</a>
+							</div>
+							<div class="item it1">
+								<a href="#"><img src="images/page1_img5.jpg" alt="">Ann <br>
+								3 years</a>
+							</div>
+							<div class="item it2">
+								<a href="#"><img src="images/page1_img6.jpg" alt="">Linda <br>
+								5 years</a>
+							</div>
+							<div class="item it3">
+								<a href="#"><img src="images/page1_img7.jpg" alt="">Mark  <br>
+								6 years</a>
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+					1,000 new projects are listed for sale on Project Hub every single day. As the first and leading marketplace for IT companies, we’ve built a buying experience that is second to none, simple to use and secure.
+
+Sellers use Project Hub  because we sell more projects than anywhere else.	
+                     </div>
+					<div class="grid_7 prefix_1">
+						<h3>About Us</h3>
+						<img src="images/page1_img8.jpg" alt="" class="img_inner fleft">
+						<div class="extra_wrapper">
+							<p>All you wanted to know about this freebie produced by Project Hub, you can find <span class="col1"><a href=" http://blog.templatemonster.com/free-website-templates/" rel="dofollow">here</a></span>.</p>
+						</div>
+						<div class="clear"></div>
+
+
+					</div>
+				</div>
+			</div>
+<!--==============================footer=================================-->
+			<footer>
+				<div class="hor bg3"></div>
+				<div class="container_12">
+					<div class="grid_12 ">
+						<div class="socials">
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<div class="clear"></div>
+						</div>
+						<div class="copy">
+							<strong>Life in Color</strong>   &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a><br>
+							Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">Project Hub</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+    
+</body>
+</html>
